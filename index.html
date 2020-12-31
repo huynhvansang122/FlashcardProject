@@ -11,11 +11,11 @@
 <div id="questionComponent">
   <div class=" wrapper">
   	<div class="notice">
-	  	<b>Submit/Total: {{TotalSubmit}}/{{StoreQuestion.length}}</b><br>
-	  	<b>Right:{{numCorrect}}</b>
+	  	<b>Đã trả lời: {{TotalSubmit}}/{{StoreQuestion.length}}</b><br>
+	  	<b>Đúng:{{numCorrect}}</b>
   	</div>
   <div class="scroll-cards">
-    <button-counter
+    <button-choose
      v-for=" (question,index) in StoreQuestion"  
      :key="index"
      v-bind:cauhoi="question"
@@ -23,7 +23,7 @@
      v-bind:dapan ="Answers[index]"
 
 
-    ></button-counter>
+    ></button-choose>
   
 
 </div>

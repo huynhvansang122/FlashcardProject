@@ -81,7 +81,21 @@ If you use SASS you can shorten this one here like this:
 .scroll-cards__item:nth-of-type(5) {
   transform: translate(calc((5 - 1) * var(--offset)), calc((5 - 1) * var(--offset)));
 }
-
+.scroll-cards__item:nth-of-type(6) {
+  transform: translate(calc((6 - 1) * var(--offset)), calc((6 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(7) {
+  transform: translate(calc((7 - 1) * var(--offset)), calc((7 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(8) {
+  transform: translate(calc((8 - 1) * var(--offset)), calc((8 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(9) {
+  transform: translate(calc((9 - 1) * var(--offset)), calc((9 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(10) {
+  transform: translate(calc((10 - 1) * var(--offset)), calc((10 - 1) * var(--offset)));
+}
 @media screen and (min-width: 37em) {
   h1 {
     font-size: 3em;
