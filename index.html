@@ -3,27 +3,27 @@
 <head>
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="css.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
 
-<div id="questionComponent">
+<div id="Component">
   <div class=" wrapper">
   	<div class="notice">
-	  	<b>Đã trả lời: {{TotalSubmit}}/{{StoreQuestion.length}}</b><br>
-	  	<b>Đúng:{{numCorrect}}</b>
+	  	<b>Đã trả lời: {{Total}}/{{ArchiveQuestion.length}}</b><br>
+	  	<b>Đúng:{{CorrectAnswer}}</b>
   	</div>
   <div class="scroll-cards">
-    <button-choose
-     v-for=" (question,index) in StoreQuestion"  
+    <content-card
+     v-for=" (question,index) in ArchiveQuestion"
      :key="index"
-     v-bind:cauhoi="question"
+     v-bind:a="question"
      v-bind:increment ="increment"
-     v-bind:dapan ="Answers[index]"
+     v-bind:b ="Answers[index]"
 
 
-    ></button-choose>
+    ></content-card>
   
 
 </div>
@@ -32,7 +32,6 @@
 
 
 </body>
-<!-- <script type="text/javascript" src="javascript.js"></script> -->
-<script type="text/javascript" src="./javascript/vue.js"></script>
+<script type="text/javascript" src="vue.js"></script>
 
 </html>

@@ -1,41 +1,42 @@
-Vue.component('button-choose', {
+Vue.component('content-card', {
     props:{
-        cauhoi:Object,
-        dapan:Array,
+        a:Object,
+        b:Array,
         increment:Function
     },
 
     data: function()
     {
         return{
-            selectIndex : null,
-            CorrectAnswer : false,
-            AnswerSelect  : false
+
+            RightAnswer : false,
+            AnswerSelect  : false,
+            selectIndex : null
         }
     },
     methods:
         {
-            selectAnswer(index)//khi click đổi màu button được chọn
+            selectAnswer(index)
             {
-                this.selectIndex=index
+                this.selectIndex=index;
 
             },
-            AnswerClass(index)//khi click đổi màu button được chọn
+            AnswerClass(index)
             {
-                let getAnswerClass='';
+                let getAnswer='';
                 if(this.selectIndex==index)
                 {
-                    getAnswerClass='answerClass';
+                    getAnswer='answerClass';
                 }
-                return getAnswerClass;
+                return getAnswer;
             },
-            checkAnswer()// kiểm tra đúng sai
+            checkAnswer()
             {
-                if(this.cauhoi.correct==this.selectIndex)
+                if(this.a.correct==this.selectIndex)
                 {
-                    this.CorrectAnswer=true
+                    this.RightAnswer=true;
                 }
-                this.increment(this.CorrectAnswer);
+                this.increment(this.RightAnswer);
 
             }
         },
@@ -43,9 +44,9 @@ Vue.component('button-choose', {
     template: `
    
    <div class="scroll-cards__item" >
-   	<p>{{cauhoi.question}}</p>
+   	<p>{{a.question}}</p>
   	<button
-      v-for="(item,index) in dapan"
+      v-for="(item,index) in b"
       :key="index"
       @click.prevent="selectAnswer(index)"
       v-bind:class="AnswerClass(index)"
@@ -61,12 +62,13 @@ Vue.component('button-choose', {
 `
 
 });
+var ArchiveQuestion=[];
 
 var question = new Vue({
-    el:"#questionComponent",
+    el:"#Component",
     data: {
 
-        StoreQuestion:
+        ArchiveQuestion:
             [
                 {correct: 2,question:'What is 4 + 5?'},
                 {correct: 2,question:'What is the most expensive pistol in CS:GO?'},
@@ -79,7 +81,7 @@ var question = new Vue({
                 {correct: 0,question: 'Which animal is an herbivore?'},
                 {correct: 2,question: 'What is 12*20'}
 
-            ],// bien luu cau hoi
+            ],
         Answers:[
             [6,8,9,13],
             ['P250','Glock-18','Desert Eagle','USP-S'],
@@ -92,10 +94,9 @@ var question = new Vue({
             ['Deer','Snake','Shark','Panther'],
             [220,230,240,250]
 
-        ],//bien luu dap an [ [],[] ]// bien luu cau hoi
-        //bien luu dap an [ [],[] ]
-        numCorrect:0,
-        TotalSubmit:0
+        ],
+        CorrectAnswer:0,
+        Total:0
 
     },
     methods:
@@ -104,9 +105,9 @@ var question = new Vue({
             {
                 if(IsCorrect==true)
                 {
-                    this.numCorrect++;
+                    this.CorrectAnswer++;
                 }
-                this.TotalSubmit++;
+                this.Total++;
             }
         },
 
