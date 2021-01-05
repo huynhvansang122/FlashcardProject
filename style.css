@@ -4,7 +4,7 @@
 
 body {
   padding: 2em;
-  background: #003;
+  background: darkcyan;
   color: #fff;
 }
 
@@ -103,7 +103,7 @@ p {
     justify-content: center;
     width: 2.75em;
     height: 2.75em;
-    background: #f09;
+    background: deepskyblue;
     color: #fff;
     text-align: center;
     border-radius: 50%;
@@ -126,15 +126,21 @@ p {
 p {
     font-family: cursive;
     text-align: center;
-    background: aquamarine;
+    background: darkseagreen;
 }
 
 .scroll-cards__item {
-    border: 5px solid blue;
+    border: 3px solid black;
 }
-button {width: 220px;padding: 10px;margin: 10px;margin-left: 29px;background: cornsilk;}
+button {
+  width: 220px;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 29px;
+  background: floralwhite
+}
 button:hover{
-    color:red;
+    color:blue;
     
 }
 

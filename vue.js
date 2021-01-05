@@ -56,7 +56,7 @@ Vue.component('content-card', {
       <div>
         <button
         @click="checkAnswer()" 
-        >submit</button>
+        >Submit</button>
       </div>
     </div>    
 `
