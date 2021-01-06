@@ -11,7 +11,8 @@ Vue.component('content-card', {
 
             RightAnswer : false,
             AnswerSelect  : false,
-            selectIndex : null
+            selectIndex : null,
+            hiddenSubmit : true
         }
     },
     methods:
@@ -36,6 +37,7 @@ Vue.component('content-card', {
                 {
                     this.RightAnswer=true;
                 }
+                this.hiddenSubmit =false;
                 this.increment(this.RightAnswer);
 
             }
@@ -53,9 +55,10 @@ Vue.component('content-card', {
     >
       {{item}}
     </button>	
-      <div>
+      <div class="submit-button">
         <button
-        @click="checkAnswer()" 
+        @click="checkAnswer()"
+        v-show="hiddenSubmit"
         >Submit</button>
       </div>
     </div>    
